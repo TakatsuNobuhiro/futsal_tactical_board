@@ -1,7 +1,8 @@
 <template>
- <Nav />
 
 
 </template>
+
+
 
 

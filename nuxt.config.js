@@ -24,7 +24,7 @@ export default {
   plugins: [
     {
       src: '@/plugins/plugin',
-      mode: 'client'
+      mode: 'client',
     }
   ],
 
@@ -37,6 +37,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'bootstrap-vue/nuxt',
     ['nuxt-fontawesome', {
       imports: [
         {
