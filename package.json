@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@branu-jp/v-drag": "^0.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/vue-fontawesome": "^0.1.10",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
+    "nuxt-fontawesome": "^0.4.0",
     "vue-drag-resize": "^1.5.4"
   }
 }

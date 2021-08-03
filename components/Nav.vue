@@ -7,5 +7,6 @@
       <li><nuxt-link to="/job">採用</nuxt-link></li>
 
     </ul>
+   
   </nav>
 </template>
