@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="canvas-area">
         <VueDragResize  :aspectRatio="true" :isResizable="false" :isDraggable="false" :w="1900" :preventActiveBehavior="true" >
             <img src="/image/board.png" width="100%">
             <!-- red -->
@@ -43,6 +43,7 @@
             </VueDragResize>
             
         </VueDragResize>
+
         
     </div>
 </template>
