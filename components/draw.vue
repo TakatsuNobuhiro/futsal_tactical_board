@@ -4,11 +4,11 @@
       <canvas id="myCanvas" v-bind:class="{eraser: canvasMode === 'eraser'}" width="100%" height="100%" @mousedown="dragStart" @mouseup="dragEnd" @mouseout="dragEnd" @mousemove="draw"></canvas>
     </div>
     <div id="tool-area">
-        <button id="pen-black-button" @click="penBlack" class="btn btn-sm btn-dark">ペン（黒）</button>
-        <button id="pen-red-button" @click="penRed" class="btn btn-sm btn-danger">ペン（赤）</button>
-        <button id="pen-blue-button" @click="penBlue" class="btn btn-sm btn-primary">ペン（青）</button>
-        <button id="eraser-button" @click="penGreen" class="btn btn-sm btn-success">ペン（緑）</button>
-        <button id="clear-button" @click="clear" class="btn btn-sm btn-light">クリア</button>
+        <button id="pen-black-button" @click="penBlack" class="btn btn-sm btn-dark" v-shortkey="['ctrl','a']" @shortkey="penBlack">ペン（黒）</button>
+        <button id="pen-red-button" @click="penRed" class="btn btn-sm btn-danger" v-shortkey="['ctrl','r']" @shortkey="penRed">ペン（赤）</button>
+        <button id="pen-blue-button" @click="penBlue" class="btn btn-sm btn-primary" v-shortkey="['ctrl','b']" @shortkey="penBlue">ペン（青）</button>
+        <button id="eraser-button" @click="penGreen" class="btn btn-sm btn-success" v-shortkey="['ctrl','g']" @shortkey="penGreen">ペン（緑）</button>
+        <button id="clear-button" @click="clear" class="btn btn-sm btn-light" v-shortkey="['ctrl','c']" @shortkey="clear">クリア</button>
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@
 </style>
 
 <script>
+
 export default {
   name: "DrawTool",
   data() {
@@ -44,14 +45,14 @@ export default {
   },
   mounted(){
       this.canvas = document.querySelector('#myCanvas')
+    　this.canvas.setAttribute('width',window.innerWidth)
+    　this.canvas.setAttribute('height',window.innerHeight)
       this.context = this.canvas.getContext('2d')
       this.context.lineCap = 'round';
       this.context.lineJoin = 'round';
-      this.context.lineWidth = 0;
+      this.context.lineWidth = 5;
       this.context.strokeStyle = '#000000';
 
-    　this.canvas.setAttribute('width',window.innerWidth)
-    　this.canvas.setAttribute('height',window.innerHeight)
 
   },
   methods: {
@@ -130,8 +131,6 @@ export default {
       this.context.lineJoin = 'round';
       this.context.lineWidth = 5;
       this.context.strokeStyle = '#b5e28a';
-
-    
     }
   }
 };

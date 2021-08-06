@@ -25,6 +25,10 @@ export default {
     {
       src: '@/plugins/plugin',
       mode: 'client',
+    },
+    {
+      src: '~/plugins/vue-shortkey.js',
+      mode: 'client',
     }
   ],
 
