@@ -1,15 +1,23 @@
 <template>
   <div>
     <div id="canvas-area">
-      <canvas id="myCanvas" width="640px" height="800px" @mousedown="dragStart" @mouseup="dragEnd" @mouseout="dragEnd" @mousemove="draw"></canvas>
+      <canvas id="myCanvas" width="100%" height="100%" @mousedown="dragStart" @mouseup="dragEnd" @mouseout="dragEnd" @mousemove="draw"></canvas>
     </div>
   </div>
 </template>
 
 <style scoped>
+.canvas-area{
+  position: absolute;
+}
+
 #myCanvas {
  border: 1px solid #000000;
+ z-index: 100;
+
+
 }
+
 </style>
 
 <script>
@@ -27,14 +35,18 @@ export default {
       this.context = this.canvas.getContext('2d')
       this.context.lineCap = 'round';
       this.context.lineJoin = 'round';
-      this.context.lineWidth = 5;
+      this.context.lineWidth = 10;
       this.context.strokeStyle = '#000000';
+
+    　this.canvas.setAttribute('width',window.innerWidth)
+    　this.canvas.setAttribute('height',window.innerHeight)
+
   },
   methods: {
     // 描画
     draw :function(e) {
-      var x = e.layerX
-      var y = e.layerY
+      let x = e.layerX
+      let y = e.layerY
  
       if(!this.isDrag) {
         return;
@@ -45,8 +57,8 @@ export default {
     },
     // 描画開始（mousedown）
     dragStart:function(e) {
-      var x = e.layerX
-      var y = e.layerY
+      let x = e.layerX
+      let y = e.layerY
  
       this.context.beginPath();
       this.context.lineTo(x, y);

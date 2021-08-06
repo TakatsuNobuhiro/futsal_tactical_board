@@ -1,8 +1,9 @@
 <template>
-    <div id="canvas-area">
-        <VueDragResize  :aspectRatio="true" :isResizable="false" :isDraggable="false" :w="1900" :preventActiveBehavior="true" >
-            <img src="/image/board.png" width="100%">
+    <div id="board">
+        <VueDragResize  :aspectRatio="true" :isResizable="false" :isDraggable="false"  :preventActiveBehavior="true" >
+            <!-- <img src="/image/board.png" width="100%"> -->
             <!-- red -->
+
             <VueDragResize v-on:dragging="resize" :aspectRatio="true" :isResizable="false" :w="50" :h="50" :x="450" :y="480" >
                 <div  class="of circle object">1</div>
             </VueDragResize>
@@ -43,6 +44,8 @@
             </VueDragResize>
             
         </VueDragResize>
+        <Draw />
+
 
         
     </div>
@@ -97,4 +100,12 @@
     .object{
         cursor: move;
     }
+
+    #board{
+        position:absolute;
+        top:0;
+        background-size: cover;
+        background-image: url("/image/board.png");
+    }
+
 </style>

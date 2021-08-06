@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <board />
-    <draw />
+    <Board />
+    
   </div>
 </template>
 
