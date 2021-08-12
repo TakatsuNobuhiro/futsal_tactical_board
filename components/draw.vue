@@ -25,9 +25,6 @@
 
 }
 
-.eraser {
-    cursor: url("/images/eraser.png") 15 15,auto;
-}
 
 </style>
 
@@ -52,8 +49,6 @@ export default {
       this.context.lineJoin = 'round';
       this.context.lineWidth = 5;
       this.context.strokeStyle = '#000000';
-
-
   },
   methods: {
     // 描画
